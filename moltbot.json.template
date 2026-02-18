@@ -1,0 +1,35 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/clawd",
+      "model": {
+        "primary": "openai/deepseek/deepseek-v3.2"
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": ["你的USER_ID"]
+    }
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "baseUrl": "https://nano-gpt.com/api/v1",
+        "models": [
+          {
+            "id": "deepseek/deepseek-v3.2",
+            "name": "DeepSeek V3.2",
+            "contextWindow": 128000
+          }
+        ]
+      }
+    }
+  }
+}

@@ -272,6 +272,11 @@ if (isOpenAI) {
     config.agents.defaults.model.primary = 'anthropic/claude-opus-4-5';
 }
 
+// Remove deprecated keys
+if (config.commands) {
+    delete config.commands.ownerDisplay;
+}
+
 // Write updated config
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 console.log('Configuration updated successfully');

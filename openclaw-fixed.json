@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.24-3",
+    "lastTouchedAt": "2026-02-03T17:11:52.315Z"
+  },
+  "models": {
+    "providers": {
+      "anthropic": {
+        "baseUrl": "https://nano-gpt.com/api/v1",
+        "apiKey": "sk-nano-9efadbfd-0e89-44c3-a253-a8ffb6744b56",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "claude-opus-4-5-20251101",
+            "name": "Claude Opus 4.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "claude-sonnet-4-5-20250929",
+            "name": "Claude Sonnet 4.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "claude-haiku-4-5-20251001",
+            "name": "Claude Haiku 4.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "openai": {
+        "baseUrl": "https://nano-gpt.com/api/v1",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gpt-5.2",
+            "name": "GPT-5.2",
+            "contextWindow": 200000
+          },
+          {
+            "id": "gpt-5",
+            "name": "GPT-5",
+            "contextWindow": 200000
+          },
+          {
+            "id": "gpt-4.5-preview",
+            "name": "GPT-4.5 Preview",
+            "contextWindow": 128000
+          },
+          {
+            "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+            "name": "Qwen 3 235b A22B 2507 Thinking",
+            "contextWindow": 128000
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/Qwen/Qwen3-235B-A22B-Thinking-2507"
+      },
+      "models": {
+        "anthropic/claude-opus-4-5-20251101": {
+          "alias": "Opus 4.5"
+        },
+        "anthropic/claude-sonnet-4-5-20250929": {
+          "alias": "Sonnet 4.5"
+        },
+        "anthropic/claude-haiku-4-5-20251001": {
+          "alias": "Haiku 4.5"
+        },
+        "openai/deepseek/deepseek-v3.2": {
+          "alias": "DeepSeek-v3.2"
+        },
+        "openai/gpt-5.2": {
+          "alias": "GPT-5.2"
+        },
+        "openai/gpt-5": {
+          "alias": "GPT-5"
+        },
+        "openai/gpt-4.5-preview": {
+          "alias": "GPT-4.5"
+        },
+        "openai/Qwen/Qwen3-235B-A22B-Instruct-2507-TEE": {
+          "alias": "Qwen 3 235b A22B 2507 (TEE)"
+        },
+        "openai/Qwen/Qwen3-235B-A22B-Thinking-2507": {
+          "alias": "Qwen 3 235b A22B 2507 Thinking"
+        }
+      },
+      "workspace": "/root/clawd",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "channels": {
+    "telegram": {
+      "botToken": "8585051316:AAEWfyUg6RAh4B_pIXhLeV4Pv6QzuuUOqrE",
+      "enabled": true,
+      "dmPolicy": "pairing"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "auth": {
+      "token": "SVVg6HY0bjU0w9GjqNwzgTttnZi1HaBj"
+    },
+    "trustedProxies": [
+      "10.1.0.0"
+    ]
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}
